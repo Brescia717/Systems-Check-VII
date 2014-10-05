@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-
+ruby "2.0.0"
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.6'
 # Use postgresql as the database for Active Record
@@ -38,3 +38,21 @@ gem 'spring',        group: :development
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
+gem 'devise'
+gem 'foundation-rails'
+gem 'font-awesome-rails'
+gem 'kaminari'
+
+group :test do
+  gem 'coveralls', require: false
+end
+
+group :development, :test do
+  gem 'factory_girl_rails'
+  gem 'shoulda-matchers'
+  gem 'capybara'
+  gem 'rspec-rails'
+  gem 'pry-rails'
+  gem 'launchy'
+  gem 'valid_attribute'
+end
