@@ -1,14 +1,6 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/paulbrescia/Dropbox/launchacademy/car_listing/app/models/manufacturer.rb": [
-        1,
-        1,
-        1,
-        null,
-        1,
-        null
-      ],
       "/Users/paulbrescia/Dropbox/launchacademy/car_listing/app/models/car.rb": [
         1,
         1,
@@ -19,8 +11,16 @@
         null,
         1,
         null
+      ],
+      "/Users/paulbrescia/Dropbox/launchacademy/car_listing/app/models/manufacturer.rb": [
+        1,
+        1,
+        1,
+        null,
+        1,
+        null
       ]
     },
-    "timestamp": 1412558134
+    "timestamp": 1412558851
   }
 }
