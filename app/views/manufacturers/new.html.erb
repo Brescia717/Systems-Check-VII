@@ -1,0 +1,15 @@
+<div class="row information">
+
+<h1>New Manufacturer</h1>
+
+<%= form_for @manufacturer do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %><br>
+
+  <%= f.label :country %>
+  <%= f.text_field :country %><br>
+
+  <%= f.submit "Submit Manufacturer", class: "button" %>
+<% end %>
+
+</div>

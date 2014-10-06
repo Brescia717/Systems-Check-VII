@@ -1,15 +1,26 @@
 class ManufacturersController < ApplicationController
+  def index
+    @manufacturers = Manufacturer.all
+  end
+
+  def show
+    @manufacturer = Manufacturer.find(params[:id])
+    @car = Car.new
+  end
+
   def new
     @manufacturer = Manufacturer.new
   end
 
   def create
     @manufacturer = Manufacturer.new(manufacturer_params)
+
     if @manufacturer.save
-      redirect_to new_manufacturer_page
+      flash[:notice] = 'Success'
+      redirect_to manufacturer_path(@manufacturer)
     else
-      flash[:alert] = "ERROR: Please try again."
-      render "new"
+      flash.now[:notice] = 'Error'
+      render :new
     end
   end
 

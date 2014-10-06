@@ -1,0 +1,42 @@
+<div class="row information">
+  <h1 style="text-align: center;"><%= @manufacturer.name %></h1>
+  <div class="row">
+    <ol>
+      <% @manufacturer.cars.each do |car| %>
+        <li>
+          <%= "Model: #{car.model}" %></br>
+          <%= "Color: #{car.color}" %><br>
+          <%= "Year: #{car.year}" %><br>
+          <%= "Miles: #{car.mileage}" %><br>
+          <%= "Description: #{car.description}" %><br>
+        </li>
+      <% end %>
+    </ol>
+
+
+  <h2>Add a Car</h2>
+
+    <%= form_for [@manufacturer, @car] do |f| %>
+      <%= f.label :make %>
+      <%= f.text_field :make %><br>
+
+      <%= f.label :model %>
+      <%= f.text_field :model %><br>
+
+      <%= f.label :color %>
+      <%= f.text_field :color %><br>
+
+      <%= f.label :year %>
+      <%= f.text_field :year %><br>
+
+      <%= f.label :mileage %>
+      <%= f.text_field :mileage %><br>
+
+      <%= f.label :description %>
+      <%= f.text_area :description %><br>
+
+      <%= f.submit "Submit Car", class: "button" %>
+    <% end %>
+  </div>
+  <p style="text-align: center;"><%= link_to "Home", manufacturers_path %></p>
+</div>

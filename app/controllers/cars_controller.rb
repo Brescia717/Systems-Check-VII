@@ -1,19 +1,20 @@
 class CarsController < ApplicationController
-  def new
-    @car = Car.new
-  end
-
   def create
     @car = Car.new(car_params)
+    @manufacturer = Manufacturer.find(params[:manufacturer_id])
+    @car.manufacturer = @manufacturer
+
     if @car.save
-      redirect_to new_car_path
+      flash[:notice] = "Success"
+      redirect_to manufacturer_path(@manufacturer)
     else
-      render "new"
+      flash.now[:notice] = "Error"
+      render 'manufacturers/show'
     end
   end
 
   private
   def car_params
-    params.require(:car).permit(:manufacturer_id, :color, :year, :mileage, :description)
+    params.require(:car).permit(:make, :model, :color, :year, :mileage, :description)
   end
 end
