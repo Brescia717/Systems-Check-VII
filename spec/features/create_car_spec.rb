@@ -7,7 +7,7 @@ feature "User adds car to manufacturer page" do
     car = FactoryGirl.build(:car)
     visit root_path
 
-    click_on "Adam"
+    # click_on "Adam"
     fill_in('make', with: car.make)
     fill_in('model', with: car.model)
     fill_in('color', with: car.color)
